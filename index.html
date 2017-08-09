@@ -1,9 +1,65 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>snake game</title>
 </head>
 <body>
+<canvas id="gameCanvas" width="800" height="600"></canvas>
+<script>
+	
 
+	var canvas= document.getElementById('gameCanvas');;
+	var canvasContext;
+	var snakeX=100;
+	var snakeY = 100;
+	var snakelen = 40;
+	var snakewidth = 10;
+	var posX=Math.random()*canvas.width-10;;
+	var posY=Math.random()*canvas.height-10;;
+	window.onload= function(){
+		
+		canvasContext = canvas.getContext('2d');
+		setInterval(function(){
+			
+		moveSnake();
+		drawEverything();
+
+		},50);
+		// canvas.addEventListener("keyup",function(evt){
+		// 	console.log("key pressed");
+		// 	var
+		// 	var temp=snakeX;
+		// 	snakeX=snakeY;
+		// 	snakeY=temp;
+		// });
+		
+				
+	}
+
+	function drawEverything(){
+
+				canvasContext.fillStyle = 'black';
+				canvasContext.fillRect(0,0,canvas.width,canvas.height);
+				canvasContext.fillStyle = 'white';
+				canvasContext.fillRect(snakeX,snakeY,snakelen,snakewidth);
+				canvasContext.fillStyle = 'white';
+
+				canvasContext.fillRect(posX,posY,10,10);
+
+
+	}
+	function moveSnake(){
+		snakeX+=10;
+		
+
+		if(false){
+			posX=Math.random()*canvas.width-10;
+			posY=Math.random()*canvas.height-10;
+		}
+
+
+	}
+
+</script>
 </body>
 </html>
